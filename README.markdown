@@ -46,6 +46,16 @@ elsewhere, eg:
 
 ## Installation
 
+**Homebrew installation**
+
+```
+$ DROPBOXID=12345 brew install https://raw.githubusercontent.com/itspriddle/dropbox-screenshots-plist/master/Formula/dropbox-screenshots-plist.rb [--with-terminal-notifier]
+$ ln -sfv $(brew --prefix)/opt/dropbox-screenshots-plist/*.plist ~/Library/LaunchAgents
+$ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.dropbox-screenshots-plist.plist
+```
+
+**Manual installation**
+
 ```
 $ git clone https://github.com/itspriddle/dropbox-screenshots-plist.git
 $ cd dropbox-screenshots-plist
