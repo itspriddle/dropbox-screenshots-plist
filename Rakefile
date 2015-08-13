@@ -14,8 +14,9 @@ task :terminal_notifier_code do
       @terminal_notifier_code = [
         "#{terminal_notifier_bin}",
         '-title "Copied Public Link to Clipboard"',
-        '-message "$url"',
+        '-message "Click to view: $url"',
         '-open "$url"',
+        '-sender com.getdropbox.dropbox'
       ].join(" ")
     end
   end
