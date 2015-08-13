@@ -49,9 +49,9 @@ elsewhere, eg:
 **Homebrew installation**
 
 ```
-$ DROPBOXID=12345 brew install https://raw.githubusercontent.com/itspriddle/dropbox-screenshots-plist/master/Formula/dropbox-screenshots-plist.rb [--with-terminal-notifier]
+$ DROPBOX_ID=12345 brew install --HEAD https://raw.githubusercontent.com/itspriddle/dropbox-screenshots-plist/master/Formula/dropbox-screenshots-plist.rb [--with-terminal-notifier]
 $ ln -sfv $(brew --prefix)/opt/dropbox-screenshots-plist/*.plist ~/Library/LaunchAgents
-$ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.dropbox-screenshots-plist.plist
+$ launchctl load ~/Library/LaunchAgents/net.nevercraft.dropbox-screenshots.plist
 ```
 
 **Manual installation**
@@ -59,7 +59,8 @@ $ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.dropbox-screenshots-plist.
 ```
 $ git clone https://github.com/itspriddle/dropbox-screenshots-plist.git
 $ cd dropbox-screenshots-plist
-$ DROPBOXID=12345 sh install.sh
+$ DROPBOX_ID=12345 rake install
+$ launchctl load ~/Library/LaunchAgents/net.nevercraft.dropbox-screenshots.plist
 ```
 
 By default the plist will use
@@ -69,7 +70,7 @@ notification will open the URL in your browser. To disable notifications
 install with the `NO_TERMINAL_NOTIFIER` flag:
 
 ```
-$ NO_TERMINAL_NOTIFIER=1 DROPBOXID=12345 sh install.sh
+$ NO_TERMINAL_NOTIFIER=1 DROPBOX_ID=12345 rake install
 ```
 
 ## Uninstalling
