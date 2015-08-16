@@ -49,7 +49,7 @@ elsewhere, eg:
 **Homebrew installation**
 
 ```
-$ DROPBOX_ID=12345 brew install --HEAD https://raw.githubusercontent.com/itspriddle/dropbox-screenshots-plist/master/Formula/dropbox-screenshots-plist.rb [--with-terminal-notifier]
+$ DROPBOX_ID=12345 brew install --HEAD itspriddle/brews/dropbox-screenshots-plist [--with-terminal-notifier]
 $ ln -sfv $(brew --prefix)/opt/dropbox-screenshots-plist/*.plist ~/Library/LaunchAgents
 $ launchctl load ~/Library/LaunchAgents/net.nevercraft.dropbox-screenshots.plist
 ```
