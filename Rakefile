@@ -55,9 +55,10 @@ task build: [:validate_dropbox_id, :terminal_notifier_code] do
 
               if [ -n "$new_file" ]; then
                 dir="$(date +%Y-%m)"
+                dest_name="Screenshot $(date "+%F %H.%M.%S").png"
                 mkdir -p ~/Dropbox/Public/Screenshots/$dir
-                mv "$new_file" ~/Dropbox/Public/Screenshots/$dir
-                url="https://dl.dropboxusercontent.com/u/#{ENV["DROPBOX_ID"]}/Screenshots/$dir/$(basename "${new_file// /%20}")"
+                mv "$new_file" ~/Dropbox/Public/Screenshots/$dir/"$dest_name"
+                url="https://dl.dropboxusercontent.com/u/#{ENV["DROPBOX_ID"]}/Screenshots/$dir/$(basename "${dest_name// /%20}")"
                 printf "%s" "$url" | pbcopy
                 #{@terminal_notifier_code}
               fi
