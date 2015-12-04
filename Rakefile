@@ -57,8 +57,8 @@ task build: [:validate_dropbox_id, :terminal_notifier_code] do
                 dir="$(date +%Y-%m)"
                 mkdir -p ~/Dropbox/Public/Screenshots/$dir
                 mv "$new_file" ~/Dropbox/Public/Screenshots/$dir
-                url="https://dl.dropboxusercontent.com/u/#{ENV["DROPBOX_ID"]}/Screenshots/$dir/$(basename "$new_file")"
-                echo "$url" | sed 's/ /%20/g' | pbcopy
+                url="https://dl.dropboxusercontent.com/u/#{ENV["DROPBOX_ID"]}/Screenshots/$dir/$(basename "${new_file// /%20}")"
+                printf "%s" "$url" | pbcopy
                 #{@terminal_notifier_code}
               fi
             </string>
