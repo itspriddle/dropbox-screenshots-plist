@@ -1,5 +1,7 @@
 # dropbox-screenshots-plist
 
+**DEPRECATED** - See https://github.com/itspriddle/shotty
+
 This is a
 [launchd.plist](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man5/launchd.plist.5.html#//apple_ref/doc/man/5/launchd.plist)
 for moving screenshots to Dropbox and copying the public URL.
